@@ -10,6 +10,12 @@ case class _turtleson() extends Reporter {
       right = List(Syntax.AgentType | Syntax.AgentsetType),
       ret = Syntax.TurtlesetType)
 }
+case class _breedon(breedName: String) extends Reporter {
+  override def syntax =
+    Syntax.reporterSyntax(
+      right = List(Syntax.TurtleType | Syntax.PatchType | Syntax.TurtlesetType | Syntax.PatchsetType),
+      ret = Syntax.TurtlesetType)
+}
 case class _and() extends Reporter with Pure {
   override def syntax =
     Syntax.reporterSyntax(
