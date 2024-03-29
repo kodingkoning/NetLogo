@@ -10,7 +10,7 @@ class _anybreedon(private[this] val _breedName: String) extends Reporter {
 
   def breedName = _breedName
 
-  override def toString: String = s"${super.toString}:$_breedName"
+  override def toString: String = s"${super.toString}:${_breedName}"
 
   override def report(context: Context): java.lang.Boolean =
     Boolean.box(report_1(context, args(0).report(context)))
