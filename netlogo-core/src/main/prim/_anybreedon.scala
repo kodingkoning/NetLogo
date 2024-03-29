@@ -6,17 +6,17 @@ import org.nlogo.agent.{ AgentSet, Patch, Turtle }
 import org.nlogo.core.{ AgentKind, I18N, Syntax }
 import org.nlogo.nvm.{ ArgumentTypeException, Context, Reporter, RuntimePrimitiveException }
 
-class _anybreedon(private[this] val breedName: String) extends Reporter {
+class _anybreedon(private[this] val _breedName: String) extends Reporter {
 
   def breedName = _breedName
 
-  override def toString: String = s"${super.toString}:$breedName"
+  override def toString: String = s"${super.toString}:$_breedName"
 
   override def report(context: Context): java.lang.Boolean =
     Boolean.box(report_1(context, args(0).report(context)))
 
   def report_1(context: Context, agentOrSet: AnyRef): Boolean = {
-    val breed = world.getBreed(breedName)
+    val breed = world.getBreed(_breedName)
     agentOrSet match {
       case turtle: Turtle =>
         if(turtle.id == -1)
